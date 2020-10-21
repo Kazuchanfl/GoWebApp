@@ -21,6 +21,12 @@ func main() {
 	// Migrate the schema
 	db.AutoMigrate(&Product{})
 
+	// Create
+	db.Create(&Product{Code: "D42", Price: 100})
+
+	// Delete - delete product
+	db.Delete(&Product{}, 1)
+
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
