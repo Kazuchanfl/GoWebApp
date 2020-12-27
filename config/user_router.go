@@ -3,6 +3,7 @@ package config
 import (
 	"net/http"
 
+	"github.com/Kazuchanfl/GoWebApp/controllers"
 	"github.com/gin-gonic/gin"
 )
 
@@ -10,8 +11,9 @@ import (
 SetupUserRouter でユーザー関連のリクエストのルーティング
 */
 func SetupUserRouter(r *gin.Engine) {
-	// Ping test
+	// GET /users
 	r.GET("/users", func(c *gin.Context) {
-		c.String(http.StatusOK, "Kazuaki")
+		users := controllers.GetAllUsers()
+		c.String(http.StatusOK, users)
 	})
 }
