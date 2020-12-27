@@ -7,7 +7,7 @@ import (
 )
 
 /*
-ルーティングの定義とHTTPサーバーの起動
+SetupRouter でルーティングの定義とHTTPサーバーの起動
 */
 func SetupRouter() {
 	// Disable Console Color
