@@ -19,6 +19,9 @@ func SetupRouter() {
 		c.String(http.StatusOK, "pong")
 	})
 
+	// ユーザー関連のリクエストのルーティング
+	SetupUserRouter(r)
+
 	// Listen and Server in 0.0.0.0:8080
 	r.Run(":8080")
 }
