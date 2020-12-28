@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/Kazuchanfl/GoWebApp/config"
+	"github.com/Kazuchanfl/GoWebApp/config/router"
 )
 
 func main() {
@@ -10,6 +11,6 @@ func main() {
 	config.SetupDb()
 
 	// gin web server を起動
-	config.SetupRouter()
+	router.SetupRouter()
 
 }
