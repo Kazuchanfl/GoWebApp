@@ -15,5 +15,8 @@ func GetAllUsers() []UserResponse {
 		UserResponse{
 			Name: "Kazuaki",
 		},
+		UserResponse{
+			Name: "Risa",
+		},
 	}
 }
