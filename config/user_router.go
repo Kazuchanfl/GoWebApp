@@ -14,6 +14,6 @@ func SetupUserRouter(r *gin.Engine) {
 	// GET /users
 	r.GET("/users", func(c *gin.Context) {
 		users := controllers.GetAllUsers()
-		c.String(http.StatusOK, users)
+		c.JSON(http.StatusOK, users)
 	})
 }
