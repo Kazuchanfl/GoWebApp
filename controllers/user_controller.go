@@ -18,6 +18,8 @@ GetAllUsers でユーザーを全取得
 func GetAllUsers() []UserResponse {
 	users := services.GetAllUsers()
 	response := make([]UserResponse, 0, len(users))
+
+	// FIXME: レスポンスの生成を効率化したい
 	for _, v := range users {
 		response = append(response, UserResponse{
 			Name: v.Name,
