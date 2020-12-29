@@ -1,5 +1,9 @@
 package controllers
 
+import (
+	"github.com/Kazuchanfl/GoWebApp/services"
+)
+
 /*
 UserResponse でコントローラのレスポンスを構造化
 */
@@ -12,14 +16,13 @@ type UserResponse struct {
 GetAllUsers でユーザーを全取得
 */
 func GetAllUsers() []UserResponse {
-	return []UserResponse{
-		UserResponse{
-			Name: "Kazuaki",
-			Age:  23,
-		},
-		UserResponse{
-			Name: "Risa",
-			Age:  20,
-		},
+	users := services.GetAllUsers()
+	response := make([]UserResponse, 0, len(users))
+	for _, v := range users {
+		response = append(response, UserResponse{
+			Name: v.Name,
+			Age:  v.Age,
+		})
 	}
+	return response
 }
